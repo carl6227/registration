@@ -40,15 +40,21 @@
         </div>
       </li>
       <li>
-        <img  class="dropdown" src="https://images.vexels.com/media/users/3/147101/isolated/lists/b4a49d4b864c74bb73de63f080ad7930-instagram-profile-button.png" alt="" style= "float:right; width:50px; height: 50px; margin-right:-950px">
+        <img  data-target=".bs-example-modal-sm" data-toggle="modal" src="https://images.vexels.com/media/users/3/147101/isolated/lists/b4a49d4b864c74bb73de63f080ad7930-instagram-profile-button.png" alt="" style= "float:right; width:50px; height: 50px; margin-right:-950px">
       </li>
-      <div class="dropdown-content">
-  <p>Hello World!</p>
-  </div>
     </ul>
   </div>
-</nav><div class="container-fluid">
-
+</nav>
+<div class="container-fluid">
+<div tabindex="-1" class="modal bs-example-modal-sm" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header"><h4>Logout <i class="fa fa-lock"></i></h4></div>
+      <div class="modal-body"><i class="fa fa-question-circle"></i> Are you sure you want to log-off?</div>
+      <div class="modal-footer"><a class="btn btn-primary btn-block" href="index.php?logout='1'" >Logout</a></div>
+    </div>
+  </div>
+</div>
 
 <div id="carouselExample1" class="carousel slide z-depth-1-half " data-ride="carousel" style="max-width:2000px; margin: auto ">
   <div class="carousel-inner">
@@ -75,12 +81,8 @@
 
 </div>
 <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-        <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
 
-<div class="header">
-	<h2>Home Page</h2>
-</div>
+
 <div class="content">
   	<!-- notification message -->
   	<?php if (isset($_SESSION['success'])) : ?>
